@@ -12,6 +12,7 @@
             --card-bg: #1e293b; 
             --text: #f8fafc; 
             --text-dim: #94a3b8;
+            --admin-gradient: linear-gradient(135deg, #1e293b 0%, #4c1d95 100%);
         }
         
         body { 
@@ -29,7 +30,7 @@
         
         .container { 
             width: 100%; 
-            max-width: 450px; 
+            max-width: 420px; 
             background: var(--card-bg); 
             padding: 40px 30px; 
             border-radius: 24px; 
@@ -47,35 +48,37 @@
         h1 { 
             color: var(--primary-light); 
             margin-bottom: 10px; 
-            font-size: 28px; 
+            font-size: 26px; 
             letter-spacing: 1px;
         }
 
         .subtitle {
             color: var(--text-dim);
             font-size: 14px;
-            margin-bottom: 35px;
+            margin-bottom: 30px;
         }
         
         .menu-options {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 12px;
         }
 
         .btn { 
             width: 100%; 
-            padding: 20px; 
+            padding: 18px; 
             background: var(--primary); 
             color: white; 
             border: none; 
-            border-radius: 16px; 
+            border-radius: 14px; 
             font-weight: bold; 
             font-size: 16px; 
             cursor: pointer; 
             transition: all 0.3s ease; 
             text-decoration: none;
-            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             box-sizing: border-box;
         }
 
@@ -85,27 +88,46 @@
             color: var(--primary-light);
         }
 
+        /* Botão Admin Discreto */
+        .btn-admin {
+            background: #0f172a;
+            border: 1px solid #334155;
+            color: var(--text-dim);
+            font-size: 13px;
+            padding: 12px;
+            margin-top: 15px;
+            font-weight: 500;
+            opacity: 0.8;
+        }
+
         .btn:hover { 
             background: var(--primary-light); 
             color: white;
-            transform: translateY(-3px); 
-            box-shadow: 0 10px 20px rgba(32, 152, 105, 0.2);
+            transform: translateY(-2px); 
         }
 
-        .icon {
+        .btn-admin:hover {
+            background: var(--admin-gradient);
+            color: white;
+            border-color: #6d28d9;
+            opacity: 1;
+        }
+
+        .icon-svg {
             margin-right: 10px;
-            font-size: 1.2rem;
+            width: 18px;
+            height: 18px;
         }
         
         footer { 
-            margin-top: 35px; 
+            margin-top: 30px; 
             border-top: 1px solid rgba(255,255,255,0.05); 
-            padding-top: 20px; 
+            padding-top: 15px; 
         }
 
         footer p {
             color: var(--text-dim); 
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             margin: 0;
         }
     </style>
@@ -118,11 +140,19 @@
     
     <div class="menu-options">
         <a href="https://maciiellucas.github.io/bolaomegasena/" class="btn">
-            <span class="icon">🍀</span> PARTICIPAR DO BOLÃO
+            <span style="margin-right:10px">🍀</span> PARTICIPAR DO BOLÃO
         </a>
 
         <a href="https://maciiellucas.github.io/conferirbolao/" class="btn btn-outline">
-            <span class="icon">📊</span> CONFERIR RESULTADO
+            <span style="margin-right:10px">📊</span> CONFERIR RESULTADO
+        </a>
+
+        <a href="https://maciiellucas.github.io/admbolao/" class="btn btn-admin">
+            <svg class="icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+            Painel do Administrador
         </a>
     </div>
 
